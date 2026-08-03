@@ -1,0 +1,230 @@
+/* =====================================================================
+   SERVERHUB — IT DISTRIBUTOR SITE
+   Palette: Navy / Orange — B2B hardware distributor
+===================================================================== */
+
+:root{
+  --navy:#131B33;
+  --navy-2:#0C1224;
+  --orange:#F0691C;
+  --orange-dark:#D2570F;
+  --orange-pale:#FEEEE2;
+  --ink:#12172A;
+  --gray-700:#3D4459;
+  --gray-500:#6B7280;
+  --gray-300:#D8DCE6;
+  --gray-100:#F5F6FA;
+  --green:#1FAE7A;
+  --white:#ffffff;
+  --radius-sm:8px;
+  --radius-md:14px;
+  --radius-lg:22px;
+  --shadow-sm:0 2px 10px rgba(12,18,36,.06);
+  --shadow-md:0 14px 34px rgba(12,18,36,.12);
+  --shadow-lg:0 26px 60px rgba(12,18,36,.20);
+  --font:'Inter','Segoe UI',sans-serif;
+  --font-display:'Poppins','Inter','Segoe UI',sans-serif;
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{ font-family:var(--font); color:var(--ink); background:#fff; margin:0; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+h1,h2,h3,h4,h5,h6{ font-family:var(--font-display); color:var(--navy); margin:0; font-weight:700; line-height:1.18; }
+a{ text-decoration:none; color:inherit; }
+img{ max-width:100%; display:block; }
+ul{ margin:0; padding:0; list-style:none; }
+button{ font-family:inherit; cursor:pointer; }
+.container{ width:92%; max-width:1240px; margin:0 auto; }
+:focus-visible{ outline:3px solid var(--orange); outline-offset:2px; }
+@media (prefers-reduced-motion:reduce){ *{ transition-duration:.001ms !important; animation-duration:.001ms !important; scroll-behavior:auto !important; } }
+
+.btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:14px 26px; border-radius:var(--radius-sm); font-weight:700; font-size:14.5px; border:1.5px solid transparent; transition:background .15s,border-color .15s,color .15s,transform .15s; white-space:nowrap; }
+.btn-primary{ background:var(--orange); color:#fff; }
+.btn-primary:hover{ background:var(--orange-dark); transform:translateY(-1px); }
+.btn-outline{ background:#fff; border-color:var(--gray-300); color:var(--navy); }
+.btn-outline:hover{ border-color:var(--orange); color:var(--orange); }
+.btn-block{ width:100%; }
+.btn[disabled]{ opacity:.6; cursor:not-allowed; }
+
+section{ padding:76px 0; }
+.section-tight{ padding:48px 0; }
+.bg-soft{ background:var(--gray-100); }
+.eyebrow{ font-size:12px; font-weight:800; letter-spacing:.09em; text-transform:uppercase; color:var(--orange); margin-bottom:10px; display:block; }
+
+/* ---------------- Header ---------------- */
+header.site-header{ position:sticky; top:0; z-index:1000; background:#fff; border-bottom:1px solid var(--gray-300); }
+.header-row{ display:flex; align-items:center; justify-content:space-between; gap:24px; padding:18px 0; }
+.brand{ display:flex; align-items:center; gap:8px; font-family:var(--font-display); font-weight:800; font-size:14px; letter-spacing:.04em; text-transform:uppercase; color:var(--orange); border:2px solid var(--orange); border-radius:8px; padding:9px 14px; flex:none; }
+.brand .mark{ width:22px; height:22px; border-radius:5px; background:var(--orange); color:#fff; display:grid; place-items:center; font-size:11px; }
+.main-nav{ display:flex; align-items:center; gap:30px; }
+.main-nav a{ font-weight:600; font-size:14.5px; color:var(--navy); position:relative; padding:4px 0; }
+.main-nav a:hover, .main-nav a[aria-current="page"]{ color:var(--orange); }
+.header-actions{ display:flex; align-items:center; gap:14px; }
+.burger{ display:none; width:42px; height:42px; border-radius:8px; border:1.5px solid var(--gray-300); background:#fff; align-items:center; justify-content:center; flex-direction:column; gap:4px; }
+.burger span{ width:19px; height:2px; background:var(--navy); border-radius:2px; }
+
+/* Mobile drawer */
+.drawer{ position:fixed; inset:0; z-index:1300; visibility:hidden; pointer-events:none; }
+.drawer.open{ visibility:visible; pointer-events:auto; }
+.drawer-overlay{ position:absolute; inset:0; background:rgba(12,18,36,.55); opacity:0; transition:opacity .3s; }
+.drawer.open .drawer-overlay{ opacity:1; }
+.drawer-panel{ position:absolute; top:0; right:0; height:100%; width:min(86vw,360px); background:#fff; transform:translateX(100%); transition:transform .3s cubic-bezier(.4,0,.2,1); overflow-y:auto; padding:22px; }
+.drawer.open .drawer-panel{ transform:translateX(0); }
+.drawer-top{ display:flex; justify-content:space-between; align-items:center; margin-bottom:22px; }
+.drawer-close{ width:36px; height:36px; border-radius:8px; border:1px solid var(--gray-300); background:#fff; }
+.drawer-nav a{ display:block; padding:14px 2px; font-weight:700; font-size:15px; border-bottom:1px solid var(--gray-100); color:var(--navy); }
+.drawer-nav a:hover{ color:var(--orange); }
+
+/* ---------------- Hero ---------------- */
+.hero{ padding:60px 0 20px; }
+.hero-grid{ display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
+.hero h1{ font-size:clamp(32px,4.4vw,52px); color:var(--navy); }
+.hero h1 .accent{ color:var(--orange); }
+.hero p.lead{ color:var(--gray-700); font-size:16.5px; margin-bottom:16px; max-width:460px; }
+.hero-media{ border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-lg); aspect-ratio:4/3; }
+.hero-media img{ width:100%; height:100%; object-fit:cover; filter:grayscale(1) contrast(1.05); }
+
+/* ---------------- Brand strip ---------------- */
+.brand-strip{ background:var(--gray-100); padding:34px 0; }
+.brand-strip-grid{ display:flex; justify-content:space-around; align-items:center; flex-wrap:wrap; gap:30px; }
+.brand-strip-grid span{ font-family:var(--font-display); font-weight:800; font-size:20px; color:#9aa1b4; letter-spacing:.02em; }
+
+/* ---------------- Feature list ("What Sets Us Apart") ---------------- */
+.section-title{ text-align:center; margin-bottom:44px; }
+.section-title h2{ font-size:clamp(24px,3.4vw,34px); }
+.section-title .accent{ color:var(--orange); }
+.feature-list{ display:flex; flex-wrap:wrap; justify-content:center; gap:14px 40px; }
+.feature-list .fi{ display:flex; align-items:center; gap:10px; font-weight:700; font-size:14.5px; color:var(--navy); }
+.feature-list .fi .ic{ width:34px; height:34px; border-radius:8px; background:var(--orange-pale); color:var(--orange); display:grid; place-items:center; font-size:15px; flex:none; }
+
+/* ---------------- Image collage + trusted block ---------------- */
+.trusted-grid{ display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center; }
+.collage{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.collage img{ border-radius:var(--radius-md); width:100%; height:100%; object-fit:cover; filter:grayscale(1) contrast(1.05); box-shadow:var(--shadow-sm); }
+.collage .c1{ grid-row:1/3; aspect-ratio:1/1.55; }
+.collage .c2{ aspect-ratio:1/1; }
+.collage .c3{ aspect-ratio:1/1; }
+.trusted-copy p{ color:var(--gray-700); margin-bottom:14px; font-size:15px; }
+
+/* ---------------- Stats strip ---------------- */
+.stats-strip{ display:flex; justify-content:center; gap:80px; flex-wrap:wrap; text-align:center; }
+.stats-strip .stat h3{ font-size:clamp(30px,4vw,46px); color:var(--orange); font-family:var(--font-display); }
+.stats-strip .stat p{ color:var(--gray-500); font-size:13.5px; text-transform:uppercase; letter-spacing:.05em; margin-top:4px; }
+
+/* ---------------- Service cards ---------------- */
+.service-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+.service-card{ background:var(--gray-100); border-radius:var(--radius-md); padding:34px 28px; }
+.service-card .sic{ width:60px; height:60px; border-radius:12px; background:var(--navy); color:var(--orange); display:grid; place-items:center; font-size:26px; margin-bottom:20px; }
+.service-card h3{ color:var(--orange); font-size:19px; margin-bottom:8px; }
+.service-card p{ color:var(--gray-700); font-size:14px; }
+
+/* ---------------- Two-col image/text block ---------------- */
+.split-block{ display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center; }
+.split-block img{ border-radius:var(--radius-lg); box-shadow:var(--shadow-md); filter:grayscale(1) contrast(1.05); aspect-ratio:4/3; object-fit:cover; width:100%; }
+.split-block h2 .accent{ color:var(--orange); }
+.split-block p{ color:var(--gray-700); margin-bottom:14px; font-size:15px; }
+.split-block.reverse{ direction:rtl; }
+.split-block.reverse > *{ direction:ltr; }
+
+/* ---------------- CTA banner ---------------- */
+.cta-banner{ background:linear-gradient(160deg,var(--navy),var(--navy-2)); border-radius:var(--radius-lg); padding:56px 40px; text-align:center; color:#fff; }
+.cta-banner h2{ color:#fff; font-size:clamp(24px,3.4vw,34px); margin-bottom:14px; }
+.cta-banner h2 .accent{ color:var(--orange); }
+.cta-banner p{ color:#B9C1D6; margin-bottom:26px; max-width:560px; margin-left:auto; margin-right:auto; }
+
+/* ---------------- Footer ---------------- */
+.site-footer{ background:var(--navy-2); color:#9BA3BC; padding:56px 0 0; }
+.footer-grid{ display:grid; grid-template-columns:1.6fr 1fr 1fr; gap:40px; padding-bottom:36px; }
+.footer-brand{ font-family:var(--font-display); font-weight:800; font-size:22px; color:var(--orange); margin-bottom:12px; }
+.footer-grid p{ font-size:13.5px; color:#8991AC; max-width:280px; }
+.footer-grid h4{ color:#fff; font-size:14px; margin-bottom:16px; }
+.footer-grid ul li{ margin-bottom:11px; }
+.footer-grid a{ font-size:13.5px; color:#9BA3BC; }
+.footer-grid a:hover{ color:#fff; }
+.footer-grid .contact-line{ display:flex; align-items:center; gap:9px; }
+.footer-bottom{ background:var(--orange); text-align:center; padding:13px 0; font-size:12.5px; font-weight:700; color:#fff; }
+
+/* ---------------- Forms (Contact / IT Asset Disposition) ---------------- */
+.form-card{ background:#fff; }
+.frow{ margin-bottom:18px; }
+.frow label{ display:block; font-weight:700; font-size:13.5px; margin-bottom:7px; color:var(--navy); }
+.fctl{ width:100%; border:1.5px solid var(--gray-300); border-radius:var(--radius-sm); padding:13px 15px; font-size:14px; font-family:inherit; background:#fff; }
+.fctl:focus{ outline:none; border-color:var(--orange); }
+.fctl.invalid{ border-color:#D64545; }
+textarea.fctl{ resize:vertical; min-height:120px; }
+.ferr{ display:none; color:#D64545; font-size:12px; margin-top:5px; }
+.frow.invalid .ferr{ display:block; }
+
+/* ---------------- Info cards (IT Asset Disposition) ---------------- */
+.info-card{ background:var(--gray-100); border-radius:var(--radius-md); padding:30px; display:flex; gap:22px; align-items:flex-start; margin-bottom:18px; }
+.info-card .ic{ width:54px; height:54px; border-radius:12px; background:var(--orange); color:#fff; display:grid; place-items:center; font-size:22px; flex:none; }
+.info-card h3{ font-size:19px; margin-bottom:8px; }
+.info-card p{ color:var(--gray-700); font-size:14.5px; }
+.info-card b{ color:var(--navy); }
+
+/* ---------------- Badge seals (IT Distribution) ---------------- */
+.seal-row{ display:flex; justify-content:center; gap:60px; flex-wrap:wrap; text-align:center; }
+.seal{ display:flex; flex-direction:column; align-items:center; gap:14px; }
+.seal .badge-circle{ width:110px; height:110px; border-radius:50%; border:4px solid var(--orange); display:grid; place-items:center; color:var(--orange); font-family:var(--font-display); font-weight:800; font-size:13px; text-align:center; line-height:1.3; position:relative; }
+.seal .badge-circle::before{ content:''; position:absolute; inset:-8px; border-radius:50%; border:1.5px dashed var(--orange); opacity:.5; }
+.seal h4{ font-size:15.5px; }
+
+/* ---------------- Config icon list ---------------- */
+.config-list{ display:flex; flex-wrap:wrap; gap:16px 40px; margin:24px 0 28px; }
+.config-list .fi{ display:flex; align-items:center; gap:10px; font-size:14.5px; font-weight:600; color:var(--navy); }
+.config-list .fi .ic{ width:30px; height:30px; border-radius:7px; background:var(--orange-pale); color:var(--orange); display:grid; place-items:center; font-size:13px; flex:none; }
+
+/* ---------------- Partner logos ---------------- */
+.partner-row{ display:flex; justify-content:center; gap:70px; flex-wrap:wrap; align-items:center; text-align:center; }
+.partner-row .p-logo{ font-family:var(--font-display); font-weight:800; font-size:19px; color:var(--navy); }
+.partner-row .p-logo span{ display:block; font-family:var(--font); font-weight:600; font-size:12px; color:var(--gray-500); margin-top:8px; text-transform:none; letter-spacing:0; }
+
+/* ---------------- Breadcrumbless page header ---------------- */
+.page-head{ padding:52px 0 8px; }
+.page-head h1{ font-size:clamp(30px,4vw,44px); margin-bottom:14px; }
+.page-head p{ color:var(--gray-700); font-size:16px; max-width:760px; }
+.page-head .accent{ color:var(--orange); font-weight:700; }
+
+/* ---------------- Two-column responsive grid (contact/asset/about layouts) ---------------- */
+.two-col-grid{ display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:start; }
+.two-col-grid.gap-lg{ gap:60px; }
+
+/* ---------------- Toast ---------------- */
+.toast{ position:fixed; bottom:24px; left:24px; z-index:2000; background:var(--navy); color:#fff; padding:13px 18px; border-radius:8px; box-shadow:var(--shadow-lg); font-size:13px; font-weight:600; min-width:240px; transform:translateY(120%); transition:transform .3s ease; display:flex; align-items:center; gap:10px; }
+.toast.show{ transform:translateY(0); }
+.toast i{ color:var(--green); }
+
+/* =====================================================================
+   RESPONSIVE
+===================================================================== */
+@media (max-width:991.98px){
+  .main-nav{ display:none; }
+  .burger{ display:flex; }
+  .hero-grid{ grid-template-columns:1fr; }
+  .hero-media{ order:-1; }
+  .trusted-grid{ grid-template-columns:1fr; }
+  .split-block{ grid-template-columns:1fr; }
+  .split-block.reverse{ direction:ltr; }
+  .split-block .split-media{ order:-1; }
+  .two-col-grid{ grid-template-columns:1fr; gap:36px; }
+  .service-grid{ grid-template-columns:1fr 1fr; }
+  .footer-grid{ grid-template-columns:1fr 1fr; }
+  .seal-row{ gap:36px; }
+  .stats-strip{ gap:40px; }
+}
+@media (max-width:767.98px){
+  section{ padding:56px 0; }
+  .service-grid{ grid-template-columns:1fr; }
+  .footer-grid{ grid-template-columns:1fr; gap:28px; }
+  .feature-list{ gap:14px 24px; }
+  .seal-row{ gap:28px; }
+  .seal .badge-circle{ width:92px; height:92px; font-size:11.5px; }
+  .partner-row{ gap:36px; }
+  .cta-banner{ padding:44px 22px; }
+}
+@media (max-width:575.98px){
+  .collage{ grid-template-columns:1fr 1fr; }
+  .stats-strip{ gap:28px 40px; }
+  .header-actions .btn{ padding:10px 14px; font-size:13px; }
+  .brand{ font-size:12px; padding:7px 10px; }
+}
